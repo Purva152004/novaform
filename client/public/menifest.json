@@ -1,0 +1,17 @@
+{
+  "name": "Nova Forms AI",
+  "short_name": "NovaForms",
+  "description": "Generate AI-powered forms, publish them instantly, and track submissions from one dashboard.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

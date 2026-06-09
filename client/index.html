@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generate polished Google-Forms-style surveys with AI, publish instantly, collect responses, and export CSV analytics." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="keywords" content="AI form builder, Google Forms generator, MERN SaaS, survey creator" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Nova Forms AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Sora', 'sans-serif'],
+              body: ['Manrope', 'sans-serif']
+            },
+            boxShadow: {
+              neon: '0 0 0 1px rgba(255,255,255,0.08), 0 18px 50px rgba(29,78,216,0.35)',
+              glow: '0 0 30px rgba(59,130,246,0.35)'
+            },
+            animation: {
+              float: 'float 8s ease-in-out infinite',
+              pulseSlow: 'pulse 4s ease-in-out infinite',
+              fadeUp: 'fadeUp 0.6s ease forwards'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-12px)' }
+              },
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(16px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/react-confetti@6.1.0/dist/react-confetti.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-slate-950 text-slate-50 font-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
