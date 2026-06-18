@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../lib/api";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
@@ -16,8 +16,8 @@ export default function Responses() {
       return;
     }
 
-    axios
-      .get(`http://localhost:5000/api/responses/${id}`, {
+    api
+      .get(`/responses/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((res) => {

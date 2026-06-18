@@ -1,7 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../lib/api";
 import { useNavigate } from "react-router-dom";
-
 export default function CreateForm() {
   const [title, setTitle] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -17,17 +16,14 @@ export default function CreateForm() {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/forms",
-        {
-          title,
-          fields: [],
-          prompt // optional, stored if you want
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token")
-          }
+      const res = await api.post("/forms", {
+        title,
+        fields: [],
+        prompt // optional, stored if you want
+      }, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
         }
       );
 
