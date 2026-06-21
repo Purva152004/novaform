@@ -22,7 +22,7 @@ const signToken = (user) =>
 const setSessionCookie = (res, token) => {
   res.cookie(cookieName, token, {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     secure: process.env.NODE_ENV === "production",
     maxAge: 7 * 24 * 60 * 60 * 1000
   });
@@ -90,7 +90,7 @@ router.post("/login", async (req, res, next) => {
 router.post("/logout", (req, res) => {
   res.clearCookie(cookieName, {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     secure: process.env.NODE_ENV === "production"
   });
   return res.json({ message: "Logged out." });
