@@ -31,18 +31,21 @@ export function AuthProvider({ children }) {
 
   const register = async (payload) => {
     const { data } = await api.post("/auth/register", payload);
+    localStorage.setItem("token", data.token);
     setUser(data.user);
     return data.user;
   };
 
   const login = async (payload) => {
     const { data } = await api.post("/auth/login", payload);
+    localStorage.setItem("token", data.token);
     setUser(data.user);
     return data.user;
   };
 
   const logout = async () => {
     await api.post("/auth/logout");
+    localStorage.removeItem("token");
     setUser(null);
   };
 
